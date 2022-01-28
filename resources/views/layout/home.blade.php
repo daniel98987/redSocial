@@ -8,6 +8,7 @@
 
         <link rel="stylesheet" href="bootstrap.min.css">
         <script src="bootstrap.bundle.min.js"></script>
+        <link  href="{{asset('css/style.css')}}" rel="stylesheet">
     </head>
     <body>
         @include('layout.menu')

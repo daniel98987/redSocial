@@ -17,8 +17,23 @@ Route::get('/', function () {
     return view('principal');
 });
 Route::get('/amigos', function () {
-    return view('amigos');
+
+    // $data['dato']=['photo' => 'emo.png','felicidad.png','foto.png', 'nombres' => 'Ricardo Ernesto','Juan Ernesto','Jhoan Alexander'
+    // ,'apellidos' => 'Solarte Rosero','Mora Benavides','Perez Rodriguez'];
+
+    $data['dato']=[
+        
+        array('Ricardo Ernesto','Solarte Rosero','bebe.png'),
+        array('Juan Ernesto','Mora Benavides','felicidad.png'),
+        array('Jhoan Alexander','Perez Rodriguez','foto.png'),
+        
+        
+        
+        
+ ];
+    return view('amigos',$data);
 });
 Route::get('/grupos', function () {
+  
     return view('grupos');
 });
