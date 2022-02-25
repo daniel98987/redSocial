@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Comentario extends Migration
+class Comentarios extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,18 @@ class Comentario extends Migration
      */
     public function up()
     {
-        Schema::create('comentario', function (Blueprint $table) {
+        Schema::create('comentarios', function (Blueprint $table) {
             $table->id();
             $table->string('textoComentario');
+            $table->unsignedBigInteger('idUsuario');
+            $table->unsignedBigInteger('idPublicacion');
             $table->timestamps();
+            $table->foreign('idUsuario')
+            ->references('id')
+            ->on('usuarios');
+            $table->foreign('idPublicacion')
+            ->references('id')
+            ->on('publicaciones');
         });
     }
 
@@ -27,6 +35,6 @@ class Comentario extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comentario');
+        Schema::dropIfExists('comentarios');
     }
 }

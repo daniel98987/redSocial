@@ -33,23 +33,23 @@ $num = array(1, 2, 3, 4, 5)
         <table class="table " class="">
           <thead>
             <tr>
-              <th scope="col">Foto</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Apellido</th>
-              <th scope="col"></th>
+              <th scope="col">nickname</th>
+              <th scope="col">nombres</th>
+              <th scope="col">apellidos</th>
+              <th scope="col">email</th>
             </tr>
           </thead>
           <tbody>
 
 
-            @foreach ($dato as $dato)
+            @foreach ($usuarios as $usuario)
             <tr>
+              <td>{{$usuario->nickname}}</td>
+              <td>{{$usuario->nombres}}</td>
+              <td>{{$usuario->apellidos}}</td>
+              <td>{{$usuario->email}}</td>
 
 
-              <td><img src="/images/{{$dato[2]}}" width=60 height=40 alt="MDN" style="border-radius: 10px;"></td>
-              <td>{{$dato[0]}}</td>
-              <td>{{$dato[1]}}</td>
-              <td>Amigo</td>
 
             </tr>
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Amistad extends Migration
+class Amistades extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class Amistad extends Migration
      */
     public function up()
     {
-        Schema::create('amistad', function (Blueprint $table) {
+        Schema::create('amistades', function (Blueprint $table) {
             $table->id();
             $table->integer('notificacionEnvio');
             $table->string('estado');
             $table->unsignedBigInteger('idUsuarioPrincipal');
             $table->unsignedBigInteger('idUsuarioAmigo');
             $table->timestamps();
+
             $table->foreign('idUsuarioPrincipal')
                 ->references('id')
                 ->on('usuarios');
@@ -37,7 +38,7 @@ class Amistad extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('amistad');
+        Schema::dropIfExists('amistades');
         //
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,23 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('principal');
 });
-Route::get('/amigos', function () {
 
-    // $data['dato']=['photo' => 'emo.png','felicidad.png','foto.png', 'nombres' => 'Ricardo Ernesto','Juan Ernesto','Jhoan Alexander'
-    // ,'apellidos' => 'Solarte Rosero','Mora Benavides','Perez Rodriguez'];
-
-    $data['dato']=[
-        
-        array('Ricardo Ernesto','Solarte Rosero','bebe.png'),
-        array('Juan Ernesto','Mora Benavides','felicidad.png'),
-        array('Jhoan Alexander','Perez Rodriguez','foto.png'),
-        
-        
-        
-        
- ];
-    return view('amigos',$data);
-});
+Route::get('/amigos',[UsuarioController::class, 'getAmigos']);
 Route::get('/grupos', function () {
   
     return view('grupos');
